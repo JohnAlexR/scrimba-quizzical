@@ -21,6 +21,12 @@ export default function Quiz(props) {
         // setQuizArray(quizArray)
         setQuizArray(() =>
           data.results.map((question) => {
+            // You should have a little brainstorming session
+            // what would be the model for your data to be stored in
+            // Tips:
+            // 1. You need a list of randomized answers
+            // 2. You need some unique Identifier for each answers
+            // 3. You need a way to indicate which answer is selected
             return {
               question: question.question,
               correct_answer: question.correct_answer,
