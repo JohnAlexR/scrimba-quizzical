@@ -38,6 +38,9 @@ export default function Quiz(props) {
     setRoundNumber((prevRound) => prevRound + 1);
   }
 
+  // This is indeed working, but isCorrect is not really the
+  // way to represent if something is selected, you should
+  // use a better name for it like isSelected as the user can
   function selectAnswer(answer) {
     const newArray = [];
 
