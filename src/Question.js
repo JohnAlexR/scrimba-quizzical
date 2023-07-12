@@ -10,12 +10,20 @@ export default function Question({
   isCorrect,
   selectAnswer,
 }) {
+  // These states are not needed, you should save
+  // the answers list and shuffle them after you received the data from the api
+  // I will mark each part which is not needed here.
+  // This component should only be responsible to present the elements to the user
+
+  // Not needed
   const answerArray = [correct, incorrect[0], incorrect[1], incorrect[2]];
+  // Not needed
   const [answerEl, setAnswerEl] = React.useState(() => {
     console.log("answerEl state ran");
     return [];
   });
 
+  // There is a shorter way of doing this by using array.sort() + Math.random()
   function shuffle(array) {
     let currentIndex = array.length;
     let randomIndex;
@@ -32,6 +40,7 @@ export default function Question({
     return array;
   }
 
+  // Not needed
   React.useEffect(() => {
     const shuffledArray = shuffle(answerArray);
 
@@ -50,6 +59,7 @@ export default function Question({
     );
   }, [roundNumber]);
 
+  // Answers should be rendered in the return statement
   return (
     <div className="question-container">
       <h3>{question}</h3>
