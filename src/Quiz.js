@@ -16,6 +16,9 @@ export default function Quiz(props) {
     fetch("https://opentdb.com/api.php?amount=5&type=multiple")
       .then((res) => res.json())
       .then((data) => {
+        // At this stage you don't need the callback to set the state:
+        // const quizArray = data.results.map(...)
+        // setQuizArray(quizArray)
         setQuizArray(() =>
           data.results.map((question) => {
             return {
